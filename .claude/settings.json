@@ -1,0 +1,19 @@
+{
+  "language": "russian",
+  "autoUpdatesChannel": "stable",
+  "permissions": {
+    "deny": ["Read(.env)"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \".claude/scripts/clean-cache.ps1\""
+          }
+        ]
+      }
+    ]
+  }
+}
